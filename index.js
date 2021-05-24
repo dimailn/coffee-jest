@@ -10,12 +10,19 @@ module.exports = {
         bare: true,
         sourceMap: true,
         filename: path,
-        transpile: {presets: [babelPresentEnv],
-        plugins:  [[babelTransformRuntime, {
-            "regenerator": true
-          }
-        ]]
-      }})
+        transpile: {
+          filename: path,
+          presets: [babelPresentEnv],
+          plugins:  [
+            [
+              babelTransformRuntime,
+              {
+                "regenerator": true
+              }
+            ]
+          ]
+        }
+      })
 
       return {
         code: result.js,
